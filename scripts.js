@@ -10,10 +10,8 @@ const expensesQuantity = document.querySelector("aside header p span ")
 const expensesTotal = document.querySelector("aside header h2")
 
 expense.oninput = () => {
-  // Permite letras (incluindo acentos) e espaços, e remove números
-  let value = expense.value
-  const regex = /\D+/g
-  expense.value = value.match(regex);
+     // Remove números do valor do input
+  expense.value = expense.value.replace(/[0-9]/g, "");
 }
 
 
