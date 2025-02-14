@@ -9,6 +9,15 @@ const expenseList = document.querySelector("ul")
 const expensesQuantity = document.querySelector("aside header p span ")
 const expensesTotal = document.querySelector("aside header h2")
 
+expense.oninput = () => {
+  // Permite letras (incluindo acentos) e espaços, e remove números
+  let value = expense.value
+  const regex = /\D+/g
+  expense.value = value.match(regex);
+}
+
+
+
 //Adiciona um evento que é acionado sempre que houver entrada de dados no input
 amount.oninput = () => {
     
@@ -133,7 +142,7 @@ function updateTotals() {
 
          //verifica se é um número válido
          if (isNaN(value)) {
-            return alert("Não foi possivel calcular o toal o valor não parece um número.")
+            return alert("Não foi possivel calcular o total o valor não parece um número.")
          }
 
          //incrementa o valor total
